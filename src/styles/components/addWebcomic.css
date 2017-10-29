@@ -1,0 +1,25 @@
+.new-webcomic {
+  padding: 10px;
+  clear: both;
+}
+
+.new-webcomic-header {
+  font-size: 125%;
+}
+
+.new-webcomic-form {
+
+}
+
+.new-webcomic-form__row {
+  font-size: 75%;
+  padding: 5px;
+}
+
+.new-webcomic-form__row label {
+  display: block;
+}
+
+.new-webcomic-form__row input {
+  width: 400px;
+}

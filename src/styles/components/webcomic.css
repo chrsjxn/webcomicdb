@@ -1,0 +1,42 @@
+.webcomic {
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.webcomic.not-updated-today {
+  display: none;
+}
+
+.webcomic-name {
+  display: block;
+}
+
+.webcomic-days {
+  font-size: 75%;
+}
+
+.webcomic-link img {
+  background-color: grey;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.webcomic.no-icon .webcomic-link img {
+  background-color: white;
+  display: block;
+}
+
+.webcomic.no-icon .webcomic-name {
+  display: none;
+}
+
+.webcomic-delete {
+  font-size: 75%;
+  vertical-align: top;
+  float: right;
+  cursor: pointer;
+  padding-left: 5px;
+}
