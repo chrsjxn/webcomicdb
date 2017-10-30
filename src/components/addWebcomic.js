@@ -78,9 +78,9 @@ class AddWebcomic extends Component {
 
   renderCheckbox(day) {
     const dayName = (day.charAt(0).toUpperCase()) + day.slice(1);
-    
+
     return <span className='days-checkbox'>
-        <input type="checkbox" name="days" id={day} onChange={this.handleDaysChange} checked={this.state.days[day]} />
+        <input type='checkbox' name='days' id={day} onChange={this.handleDaysChange} checked={this.state.days[day]} />
         <label htmlFor={day}>{dayName}</label>
       </span>;
   }
@@ -92,11 +92,11 @@ class AddWebcomic extends Component {
       <span className='new-webcomic-header'>Add a new webcomic</span>
       <form className='new-webcomic-form' onSubmit={self.onSubmit}>
         <div className='new-webcomic-form__row'>
-          <label htmlFor="webcomicname">Name:</label>
-          <input id="webcomicname" value={self.state.name} onChange={self.handleNameChange}></input>
+          <label htmlFor='webcomicname'>Name:</label>
+          <input id='webcomicname' value={self.state.name} onChange={self.handleNameChange}></input>
         </div>
         <div className='new-webcomic-form__row days-row'>
-          <label htmlFor="days">Days:</label>
+          <label htmlFor='days'>Days:</label>
           {this.renderCheckbox('monday')}
           {this.renderCheckbox('tuesday')}
           {this.renderCheckbox('wednesday')}
@@ -106,12 +106,12 @@ class AddWebcomic extends Component {
           {this.renderCheckbox('sunday')}
         </div>
         <div className='new-webcomic-form__row'>
-          <label htmlFor="webcomicurl">URL:</label>
-          <input id="webcomicurl" value={self.state.url} onChange={self.handleURLChange}></input>
+          <label htmlFor='webcomicurl'>URL:</label>
+          <input id='webcomicurl' value={self.state.url} onChange={self.handleURLChange}></input>
         </div>
         <div className='new-webcomic-form__row'>
-          <label htmlFor="webcomiciconurl">Icon URL:</label>
-          <input id="webcomiciconurl" value={self.state.iconUrl} onChange={self.handleIconURLChange}></input>
+          <label htmlFor='webcomiciconurl'>Icon URL:</label>
+          <input id='webcomiciconurl' value={self.state.iconUrl} onChange={self.handleIconURLChange} placeholder='Optional'></input>
         </div>
         <div className='new-webcomic-form__row'>
           <button type='Submit'>Submit</button>

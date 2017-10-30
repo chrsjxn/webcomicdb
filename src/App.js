@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div className="App">
+        <div className='App'>
           <h1>WebcomicDB</h1>
           <Tracker />
         </div>

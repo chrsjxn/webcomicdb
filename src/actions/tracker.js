@@ -1,5 +1,5 @@
-const ADD_WEBCOMIC = "ADD_WEBCOMIC";
-const REMOVE_WEBCOMIC = "REMOVE_WEBCOMIC";
+const ADD_WEBCOMIC = 'ADD_WEBCOMIC';
+const REMOVE_WEBCOMIC = 'REMOVE_WEBCOMIC';
 
 function addWebcomic(wc) {
   return {

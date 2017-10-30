@@ -4,15 +4,15 @@ const localStorageState = JSON.parse(window.localStorage.getItem('webcomicState'
 
 const initialState = localStorageState || {
   webcomics: [{
-    name: "Questionable Content",
-    days: "MTWRF",
-    url: "http://www.questionablecontent.net",
-    iconUrl: "http://www.questionablecontent.net/images/logo16.png"
+    name: 'Questionable Content',
+    days: 'MTWRF',
+    url: 'http://www.questionablecontent.net',
+    iconUrl: 'http://www.questionablecontent.net/images/logo16.png'
   }, {
-    name: "Wilde Life",
-    days: "MWF",
-    url: "http://www.wildelifecomic.com/",
-    iconUrl: "http://www.wildelifecomic.com/images/logo.png"
+    name: 'Wilde Life',
+    days: 'MWF',
+    url: 'http://www.wildelifecomic.com/',
+    iconUrl: 'http://www.wildelifecomic.com/images/logo.png'
   }]
 };
 
