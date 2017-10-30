@@ -4,7 +4,7 @@ import '../styles/components/webcomic.css';
 
 function today() {
   var d = new Date();
-  var weekday = ["S", "M", "T", "W", "R", "F", "S"];
+  var weekday = ["U", "M", "T", "W", "R", "F", "S"];
 
   return weekday[d.getDay()];
 }

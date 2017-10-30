@@ -8,14 +8,22 @@ class AddWebcomic extends Component {
 
     this.state = {
       name: '',
-      days: '',
+      days: {
+        monday: false,
+        tuesday: false,
+        wednesday: false,
+        thursday: false,
+        friday: false,
+        saturday: false,
+        sunday: false
+      },
       url: '',
       iconUrl: ''
     }
 
     this.handleNameChange = this.handleNameChange.bind(this);
-    this.handleDaysChange = this.handleDaysChange.bind(this);
     this.handleURLChange = this.handleURLChange.bind(this);
+    this.handleDaysChange = this.handleDaysChange.bind(this);
     this.handleIconURLChange = this.handleIconURLChange.bind(this);
 
     this.onSubmit = this.onSubmit.bind(this);
@@ -23,10 +31,6 @@ class AddWebcomic extends Component {
 
   handleNameChange(event) {
     this.setState({name: event.target.value});
-  }
-
-  handleDaysChange(event) {
-    this.setState({days: event.target.value});
   }
 
   handleURLChange(event) {
@@ -37,10 +41,24 @@ class AddWebcomic extends Component {
     this.setState({iconUrl: event.target.value});
   }
 
+  handleDaysChange(event) {
+    let days = this.state.days;
+    days[event.target.id] = event.target.value;
+    this.setState({days: days});
+  }
+
   onSubmit(event) {
     event.preventDefault();
 
-    this.props.addWebcomic(this.state);
+    const days = this.state.days;
+    const dayString = `${days.monday ? 'M':''}${days.tuesday ? 'T':''}${days.wednesday ? 'W':''}${days.thursday ? 'R':''}${days.friday ? 'F':''}${days.saturday ? 'S':''}${days.sunday ? 'U':''}`
+
+    this.props.addWebcomic({
+      name: this.state.name,
+      days: dayString,
+      url: this.state.url,
+      iconUrl: this.state.iconUrl
+    });
 
     this.setState({
       name: '',
@@ -60,9 +78,15 @@ class AddWebcomic extends Component {
           <label htmlFor="webcomicname">Name:</label>
           <input id="webcomicname" value={self.state.name} onChange={self.handleNameChange}></input>
         </div>
-        <div className='new-webcomic-form__row'>
-          <label htmlFor="webcomicdays">Days: (eg, 'TRS' for Tuesday, Thursday, Saturday)</label>
-          <input id="webcomicdays" value={self.state.days} onChange={self.handleDaysChange}></input>
+        <div className='new-webcomic-form__row days-row'>
+          <label htmlFor="days">Days:</label>
+          <span className='days-checkbox'><input type="checkbox" name="days" id="monday" onChange={self.handleDaysChange} /><label htmlFor="monday">Monday</label></span>
+          <span className='days-checkbox'><input type="checkbox" name="days" id="tuesday" onChange={self.handleDaysChange} /><label htmlFor="tuesday">Tuesday</label></span>
+          <span className='days-checkbox'><input type="checkbox" name="days" id="wednesday" onChange={self.handleDaysChange} /><label htmlFor="wednesday">Wednesday</label></span>
+          <span className='days-checkbox'><input type="checkbox" name="days" id="thursday" onChange={self.handleDaysChange} /><label htmlFor="thursday">Thursday</label></span>
+          <span className='days-checkbox'><input type="checkbox" name="days" id="friday" onChange={self.handleDaysChange} /><label htmlFor="friday">Friday</label></span>
+          <span className='days-checkbox'><input type="checkbox" name="days" id="saturday" onChange={self.handleDaysChange} /><label htmlFor="saturday">Saturday</label></span>
+          <span className='days-checkbox'><input type="checkbox" name="days" id="sunday" onChange={self.handleDaysChange} /><label htmlFor="sunday">Sunday</label></span>
         </div>
         <div className='new-webcomic-form__row'>
           <label htmlFor="webcomicurl">URL:</label>

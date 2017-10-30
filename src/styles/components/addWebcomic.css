@@ -14,6 +14,7 @@
 .new-webcomic-form__row {
   font-size: 75%;
   padding: 5px;
+  clear: both;
 }
 
 .new-webcomic-form__row label {
@@ -22,4 +23,21 @@
 
 .new-webcomic-form__row input {
   width: 400px;
+}
+
+.days-checkbox input[type=checkbox] {
+  width: inherit;
+}
+
+.days-row {
+  width: 400px;
+}
+
+.days-checkbox {
+  padding: 5px;
+  float: left;
+}
+
+.days-checkbox label {
+  display: inline;
 }
