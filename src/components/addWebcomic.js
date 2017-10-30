@@ -76,6 +76,15 @@ class AddWebcomic extends Component {
     });
   }
 
+  renderCheckbox(day) {
+    const dayName = (day.charAt(0).toUpperCase()) + day.slice(1);
+    
+    return <span className='days-checkbox'>
+        <input type="checkbox" name="days" id={day} onChange={this.handleDaysChange} checked={this.state.days[day]} />
+        <label htmlFor={day}>{dayName}</label>
+      </span>;
+  }
+
   render() {
     const self = this;
 
@@ -88,13 +97,13 @@ class AddWebcomic extends Component {
         </div>
         <div className='new-webcomic-form__row days-row'>
           <label htmlFor="days">Days:</label>
-          <span className='days-checkbox'><input type="checkbox" name="days" id="monday" onChange={self.handleDaysChange} checked={self.state.days.monday} /><label htmlFor="monday">Monday</label></span>
-          <span className='days-checkbox'><input type="checkbox" name="days" id="tuesday" onChange={self.handleDaysChange} checked={self.state.days.tuesday} /><label htmlFor="tuesday">Tuesday</label></span>
-          <span className='days-checkbox'><input type="checkbox" name="days" id="wednesday" onChange={self.handleDaysChange} checked={self.state.days.wednesday} /><label htmlFor="wednesday">Wednesday</label></span>
-          <span className='days-checkbox'><input type="checkbox" name="days" id="thursday" onChange={self.handleDaysChange} checked={self.state.days.thursday} /><label htmlFor="thursday">Thursday</label></span>
-          <span className='days-checkbox'><input type="checkbox" name="days" id="friday" onChange={self.handleDaysChange} checked={self.state.days.friday} /><label htmlFor="friday">Friday</label></span>
-          <span className='days-checkbox'><input type="checkbox" name="days" id="saturday" onChange={self.handleDaysChange} checked={self.state.days.saturday} /><label htmlFor="saturday">Saturday</label></span>
-          <span className='days-checkbox'><input type="checkbox" name="days" id="sunday" onChange={self.handleDaysChange} checked={self.state.days.sunday} /><label htmlFor="sunday">Sunday</label></span>
+          {this.renderCheckbox('monday')}
+          {this.renderCheckbox('tuesday')}
+          {this.renderCheckbox('wednesday')}
+          {this.renderCheckbox('thursday')}
+          {this.renderCheckbox('friday')}
+          {this.renderCheckbox('saturday')}
+          {this.renderCheckbox('sunday')}
         </div>
         <div className='new-webcomic-form__row'>
           <label htmlFor="webcomicurl">URL:</label>
@@ -110,6 +119,7 @@ class AddWebcomic extends Component {
       </form>
     </div>
   }
+
 };
 
 export default AddWebcomic;
