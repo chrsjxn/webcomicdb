@@ -34,6 +34,13 @@ function addWebcomic(state, action) {
     iconUrl: action.iconUrl
   });
 
+  webcomics.sort((a, b) => {
+    let nameA = a.name.toUpperCase();
+    let nameB = b.name.toUpperCase();
+
+    return (nameA < nameB ? -1 : (nameB < nameA ? 1 : 0));
+  });
+
   let newState = {...state, webcomics};
 
   window.localStorage.setItem('webcomicState', JSON.stringify(newState));
